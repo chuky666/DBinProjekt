@@ -7,13 +7,15 @@ using System.Data;
 
 namespace DBinProjekt
 {
+    
      public class COrgLieferanten
     {
-
+        public DataTable LiefDt = new DataTable();
         public COrgLieferanten()
         {
-                       getDaten();
-                       Lifnr = dt.Rows[0].ItemArray[0] as string;
+            getDaten();
+            LiefDt = dt;
+                        Lifnr = dt.Rows[0].ItemArray[0] as string;
             Matchcode = dt.Rows[0].ItemArray[1] as string;
         }
         DataRow row = null;
@@ -89,17 +91,13 @@ namespace DBinProjekt
         {
             using (MyContextDataContext myctx = new MyContextDataContext(Properties.Settings.Default.MyDBConnectionString))
             {
-
-           // MyContextDataContext myctx = new MyContextDataContext();
-
+      
                 var update = (from b in myctx.orgLieferanten
                               where b.dbbestand == "PRD" && (b.lifnr == strlifnr)
                               select b).SingleOrDefault();
                             
             update.mcod1 = strmcod1;
-            //update.mcod1 = "bla blubb GmbH";
             
-
             try
                             {
                                 myctx.SubmitChanges();
@@ -110,12 +108,7 @@ namespace DBinProjekt
                                 
                                 return ex.Message;
                             }
-            finally
-            {
-                update = null;
-                myctx.Dispose();
-            }
-            
+           
                 return "1";
 
             }

@@ -14,10 +14,11 @@ namespace DBinProjekt
     public partial class Form1 : Form
     {
           COrgLieferanten myobj = new COrgLieferanten();
+          private BindingSource bindingSource1 = new BindingSource();
 
         public Form1()
         {
-            //COrgLieferanten myobj = new COrgLieferanten();
+            bindingSource1.DataSource = myobj.LiefDt;
             InitializeComponent();
 
             //textBox1.Text = myobj.Lifnr.ToString();
@@ -26,6 +27,8 @@ namespace DBinProjekt
             textBox1.DataBindings.Add(new Binding ("Text", myobj, "Lifnr"));
 
             textBox2.DataBindings.Add(new Binding ("Text", myobj, "Matchcode"));
+
+            dataGridView1.DataSource = bindingSource1;
 
         }
 
@@ -37,11 +40,8 @@ namespace DBinProjekt
                 {
                     MessageBox.Show(COrgLieferanten.safe(textBox1.Text, textBox2.Text).ToString());
                 }
-                else
-                {
-                    textBox1.Refresh();
-                    textBox2.Refresh();
-                }
+               
+              
 
             }
            
