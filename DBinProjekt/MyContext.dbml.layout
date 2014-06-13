@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.875" name="MyContext">
+  <DataContextMoniker Name="/MyContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="dce8a781-4c65-42cf-8456-458f8430996b" absoluteBounds="6.875, 1.25, 2, 7.3476383463541657">
+      <DataClassMoniker Name="/MyContextDataContext/Lieferanten_Lagertool" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11a9b85f-7ef3-4741-88d0-868bd4f558c0" absoluteBounds="6.89, 1.71, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="824d2b0c-1f54-4bdd-8435-d7066cc28fde" absoluteBounds="1.75, 1.125, 2, 4.2708154296875">
+      <DataClassMoniker Name="/MyContextDataContext/orgLieferanten" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f48b2ed8-e0d0-40b1-8d90-132238bdeaba" absoluteBounds="1.7650000000000001, 1.585, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 3.32290771484375); (6.875 : 3.32290771484375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MyContextDataContext/orgLieferanten/orgLieferanten_Lieferanten_Lagertool" />
+      <nodes>
+        <classShapeMoniker Id="824d2b0c-1f54-4bdd-8435-d7066cc28fde" />
+        <classShapeMoniker Id="dce8a781-4c65-42cf-8456-458f8430996b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

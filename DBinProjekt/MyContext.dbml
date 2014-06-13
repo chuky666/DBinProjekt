@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MyDB" Class="MyContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\MyDB.mdf;Integrated Security=True" SettingsObjectName="DBinProjekt.Properties.Settings" SettingsPropertyName="MyDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Lieferanten_Lagertool" Member="Lieferanten_Lagertool">
+    <Type Name="Lieferanten_Lagertool">
+      <Column Name="dbbestand" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lifnr" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ext_lifnr" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="srventg" Type="System.Decimal" DbType="Decimal(6,3)" CanBeNull="true" />
+      <Column Name="konsivertrag" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="kommentar" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="uebart" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="standarddrucker" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="format_pdf" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="format_file" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="format_fileformat" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="format_file_ext" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="format_mask" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="ftp_server" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="email_an" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="email_von" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="konsi_erstellung_art" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="srventg_alt" Type="System.Decimal" DbType="Decimal(6,3)" CanBeNull="true" />
+      <Column Name="bestellungen_vereinzeln" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="statistik_senden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="lieferzeit_lager" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lieferzeit_haus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mindestauftragswert" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="mindermengenzuschlag" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="kommentarreferenz" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="konsistatistik_split" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="arzneimittel_genehmigung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="aktiv" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MCKonsiversendung" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="beschaffungslieferant" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MoeglicheBeschaffungsarten" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LieferzeitenLZ" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BestellannahmeLief" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="GefahrstoffeLief" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="orgLieferanten_Lieferanten_Lagertool" Member="orgLieferanten" ThisKey="dbbestand,lifnr" OtherKey="dbbestand,lifnr" Type="orgLieferanten" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.orgLieferanten" Member="orgLieferanten">
+    <Type Name="orgLieferanten">
+      <Column Name="dbbestand" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lifnr" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="mcod1" Type="System.String" DbType="Char(25)" CanBeNull="true" />
+      <Column Name="name1" Type="System.String" DbType="Char(35)" CanBeNull="true" />
+      <Column Name="name2" Type="System.String" DbType="Char(35) NOT NULL" CanBeNull="false" />
+      <Column Name="stras" Type="System.String" DbType="Char(35)" CanBeNull="true" />
+      <Column Name="land1" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="pstlz" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ort01" Type="System.String" DbType="Char(35)" CanBeNull="true" />
+      <Column Name="telf1" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="verkf" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="telfx" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="kdnr" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="ztag1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="zprz1" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="ztag2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="zprz2" Type="System.Decimal" DbType="Decimal(6,2)" CanBeNull="true" />
+      <Column Name="ztag3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="orgLieferanten_Lieferanten_Lagertool" Member="Lieferanten_Lagertool" ThisKey="dbbestand,lifnr" OtherKey="dbbestand,lifnr" Type="Lieferanten_Lagertool" />
+    </Type>
+  </Table>
+</Database>
