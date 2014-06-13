@@ -96,8 +96,8 @@ namespace DBinProjekt
                               where b.dbbestand == "PRD" && (b.lifnr == strlifnr)
                               select b).SingleOrDefault();
                             
-            //update.mcod1 = strmcod1;
-            update.mcod1 = "bla blubb GmbH";
+            update.mcod1 = strmcod1;
+            //update.mcod1 = "bla blubb GmbH";
             
 
             try

@@ -37,6 +37,11 @@ namespace DBinProjekt
                 {
                     MessageBox.Show(COrgLieferanten.safe(textBox1.Text, textBox2.Text).ToString());
                 }
+                else
+                {
+                    textBox1.Refresh();
+                    textBox2.Refresh();
+                }
 
             }
            
